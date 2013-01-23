@@ -19,7 +19,6 @@ $(function(){
   var users = {};
 
   function show_status( response ) {
-    console.dir(response);
     $('#output_status').append( response.status + "\n");
     if (response.status === 'connected') {
         // the user is logged in and has authenticated your
@@ -31,6 +30,7 @@ $(function(){
         var accessToken = response.authResponse.accessToken;
         $('.fb-login').hide();
         $('.fb-logout').show();
+        $('.fb-remove').show();
         FB.api('/me', function(response) {
            me = response;
            // $('#output_status').append( JSON.stringify( response, undefined, 2) );
@@ -98,20 +98,12 @@ $(function(){
         // but has not authenticated your app
         $('.fb-login').show();
         $('.fb-logout').hide();
+        $('.fb-remove').hide();
     } else {
         // the user isn't logged in to Facebook.
         $('.fb-login').show();
         $('.fb-logout').hide();
-    }
-    if (response.session) {
-        if (response.scope) {
-            // user is logged in and granted some permissions.
-            // scope is a comma separated list of granted permissions
-        } else {
-            // user is logged in, but did not grant any permissions
-        }
-    } else {
-        // user is not logged in
+        $('.fb-remove').hide();
     }
   }
 
