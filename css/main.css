@@ -1,0 +1,33 @@
+#messages img { float: left; margin-right: 5px; }
+#messages p { clear: both; }
+
+#messages article {
+    padding-bottom: 1em;
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 1em;
+}
+
+.new_point {
+    margin-bottom: 6em;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

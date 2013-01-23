@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>I Read Your Mail - a one page, javascript only, Facebook App</title>
+    <meta name="description" content="This App demonstrates how a facebook app can read your facebook messages / mail">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .fb-logout { display: none; }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">I read your Mail</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="#top_of_messages">Messages</a></li>
+              <li><a href="#top_of_how">How?</a></li>
+              <li><a href="#top_of_evil">Evil?</a></li>
+              <li><a href="#top_of_whatnow">What now?</a></li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <button class="btn fb-login">Log in with Facebook</button>
+              <button class="btn fb-logout">Log Out of Facebook and this App</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-unit">
+        <h1>I Read Your Mail</h1>
+        <p>This App demonstrates how a facebook app can read your facebook messages / mail -i
+            if you allow it to.</p>
+        <p><a class="btn btn-primary btn-large fb-login">Sign in with Facebook &raquo;</a></p>
+
+        <pre id="output_status"></pre>
+        </p>
+      </div>
+
+      <div class="row new_point" id="top_of_messages"> </div>
+
+      <div class="row">
+        <div class="span4">
+            <h3 class="alert alert-success"><span id="no">0</span> Message</h3>
+            <p> read from your Facebook Mailbox</p>
+        </div>
+        <div class="span6 media" id="messages">
+        </div>
+      </div>
+      <div class="row new_point" id="top_of_how"></div>
+      <div class="row">
+        <div class="span12">
+        <h2 class="alert alert-block">How did this happen?</h2>
+        </div>
+        <div class="span6">
+        <h3>Step 1) Log In with Facebook</h3>
+        <p>When you log in you are asked if you want to grant access to this application = this website. 
+        If you say 'no' here, you will not be able to use the website.</p>
+        </div>
+        <div class="span6">
+        <h3>Step 2) Extended Permissions</h3>
+        <p>In this second step, you are asked for permissions that you may also <b>deny</b>!  Just press
+        the "skip" button to ignore the request. But if you grant the permission here, the
+        app can really read the messages from your inbox!</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="span6">
+        <p><img class="img-polaroid" src="permission-0.png" alt="extended permission dialog"></p>
+        <p><a class="btn" href="https://developers.facebook.com/docs/concepts/login/permissions-login-dialog/">View details for Developers&raquo;</a></p>
+        </div>
+        <div class="span6">
+        <p><img class="img-polaroid" src="permission-1.png" alt="extended permission dialog"></p>
+        <p><a class="btn" href="https://developers.facebook.com/docs/reference/login/extended-permissions/">View details for Developers&raquo;</a></p>
+        </div>
+      </div>
+      <div class="row new_point" id="top_of_evil"></div>
+      <div class="row">
+        <div class="span12">
+            <h2 class="alert alert-error">Is this evil? Is Facebook evil?</h2>
+            <p class="lead">By joining Facebook, you agreed that they can have your data, forever.
+            And you told them all about your friends &ndash; information which facebook will also keep, forever.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">
+        <p>You agreed to all that, nobody forced you.
+        You probably enjoyed signing up for facebook and
+        had fun using it so far.</p>
+        <p>But stop and think one moment: 
+        what are the consequences for our society if one
+        company knows more about millions of citizens than
+        Gestapo and STASI and KGB and CIA combined ever did?
+        </p>
+        <p>Is this a subject worth spending some time on?
+        Then listen to Eben Moglens talk at re:publica 2012.
+        </p>
+        </div>
+        <div class="span7 offset2">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/sKOk4Y4inVY?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row new_point" id="top_of_whatnow"></div>
+      <div class="row">
+        <div class="span12">
+            <h2 class="alert alert-info">So What Now?</h2>
+        </div>
+        <div class="span6">
+            <p><span class="lead">The easy part:</span>
+            got to facebook and revoke the permissions for this app/webpage.</p>
+            <p>And while you're there, maybe delete some of the other
+            apps you've accumulated... who knows what they're up to!</p>
+
+            <p><a href="https://www.facebook.com/settings?tab=applications"><img class="img-polaroid" src="remove-permissions.png" alt="remove permissions dialog"></a></p>
+            <p><a class="btn" href="account-settings.png">Bigger Screenshot&raquo;</a></p>
+        
+        </div>
+        <div class="span4 offset1">
+            <p class="lead">The hard part</p>
+            <p class="lead">Should you <a href="http://www.howtoleavefacebook.com/">leave facebook</a>? </p>
+            <p><a href="http://www.howtoleavefacebook.com/"><img src="fb_trash_170.png"></a></p>
+            <p class="lead">Should you <a href="https://www.eff.org/search/site/facebook">keep an eye on facebook</a></p>
+            <p>This week (January 2013) you should learn
+            <a href="https://www.eff.org/deeplinks/2013/01/how-protect-your-privacy-facebooks-graph-search">How to Protect Your Privacy from Facebook's Graph Search</a>. Next week it will be something different.</p>
+
+            <p class="lead">Should you move to a different network?</p>
+            <p>There are several "federated social media" projects. The "federated"
+            stands for: not all the data is stored in one place.</p>
+            <p>One is <a href="http://podupti.me/">diaspora</a>. But none
+            have the reach of facebook - probably you friends won't be on it already.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Brigitte Jellinek 2012, published under GNU Affero</p>
+      </footer>
+
+    </div> <!-- /container -->
+    <div id="fb-root"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="//connect.facebook.net/en_US/all.js"></script>
+    <script>
+        FB.init({
+        appId      : '328826710557131',
+        channelUrl : 'http://ireadyourmail.multimediatechnology.at/channel.html', // Channel File
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+        });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
