@@ -120,7 +120,7 @@
         </p>
         </div>
         <div class="span7 offset2">
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/sKOk4Y4inVY?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+            <iframe width="640" height="360" src="http://www.youtube.com/embed/sKOk4Y4inVY?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
       <div class="row new_point" id="top_of_whatnow"></div>
@@ -169,16 +169,29 @@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="//connect.facebook.net/en_US/all.js"></script>
+    <div id="fb-root"></div>
     <script>
-        FB.init({
-        appId      : '328826710557131',
-        channelUrl : 'http://ireadyourmail.github.com/channel.html', // Channel File
-        status     : true, // check login status
-        cookie     : true, // enable cookies to allow the server to access the session
-        xfbml      : true  // parse XFBML
-        });
-    </script>
-    <script src="js/main.js"></script>
-  </body>
+       window.fbAsyncInit = function() {
+       // init the FB JS SDK
+          FB.init({
+          appId      : '328826710557131',
+          channelUrl : 'http://ireadyourmail.github.io/channel.html', // Channel File
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true  // parse XFBML
+          });
+     // Additional initialization code such as adding Event Listeners goes here
+       };
+
+         // Load the SDK asynchronously
+       (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+   </script>
+   <script src="js/main.js"></script>
+ </body>
 </html>
